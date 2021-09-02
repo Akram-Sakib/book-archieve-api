@@ -55,10 +55,15 @@ const getBooksByName = (data) => {
     const { first_publish_year } = detail;
     const { publisher } = detail;
 
-    div.innerHTML = `
+    const getImg = cover_i
+      ? "https://covers.openlibrary.org/b/id/" + cover_i + "-M.jpg"
+      : "https://covers.openlibrary.org/b/id/10909258-M.jpg";
+    console.log(getImg);
+
+      div.innerHTML = `
     <div class="card-deck" >
             <div class="card border-primary">
-              <img class="card-img-top" height="250" src="https://covers.openlibrary.org/b/id/${cover_i}-M.jpg" alt="Card image cap" />
+              <img class="card-img-top" height="250" src="${getImg}" alt="Card image cap" />
               <div class="card-body text-primary">
                 <h5 class="card-title">${title}</h5>
                 <p class="card-text">
@@ -73,6 +78,7 @@ const getBooksByName = (data) => {
           </div>
     `;
     row.appendChild(div);
+    
   });
   searchField.value = "";
 };
