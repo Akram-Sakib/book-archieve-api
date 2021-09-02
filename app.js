@@ -7,7 +7,7 @@ const searchBook = async ()=> {
     row.innerHTML = `
     <div class="spinner-border mx-auto" style="width: 3rem; height: 3rem;" role="status"></div
     `;
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
+    const url = `https://openlibrary.org/search.json?q=${searchText}`;
     
     try {
         const res = await fetch(url);
