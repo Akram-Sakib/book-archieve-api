@@ -81,4 +81,4 @@ const getBooksByName = (data) => {
     
   });
   searchField.value = "";
-};
+}
